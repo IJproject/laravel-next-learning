@@ -1,11 +1,7 @@
 import React from 'react'
+import axios from '@/libs/axios'
+import { CommunityPage } from '@/components/pages/communities/CommunityPage'
 
-const Page = () => {
-  return (
-    <div>
-      <h1>Communities</h1>
-    </div>
-  );
-};
+const Page = () => <CommunityPage />
 
-export default Page;
+export default Page
