@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:api": "yarn run openapi-typescript ../packages/openapi.yml --output ./src/external/openapi.d.ts"
   },
   "dependencies": {
     "@emotion/cache": "^11.13.0",
@@ -26,6 +27,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
+    "openapi-typescript": "^7.3.0",
     "typescript": "^5"
   }
 }

@@ -1,0 +1,54 @@
+openapi: "3.1.0"
+info:
+  title: Laravel+Next学習
+  version: "1.0"
+  description: 学習用。
+servers:
+  - url: http://localhost:8000
+    description: ローカルAPI
+paths:
+  /api/communities:
+    get:
+      summary: コミュニティ一覧情の取得
+      description: コミュニティ一覧情報を取得する
+      tags:
+        - communities
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                properties:
+                  communities:
+                    $ref: '#/components/schemas/communities'
+                required:
+                  - communities
+      parameters: []
+components:
+  schemas:
+    communities:
+      type: array
+      properties:
+        id:
+          type: integer
+          description: コミュニティID
+        name:
+          type: string
+          description: コミュニティ名
+        description:
+          type: string
+          description: コミュニティ説明
+        created_at:
+          type: string
+          description: コミュニティ作成日時
+          format: date-time
+        updated_at:
+          type: string
+          description: コミュニティ更新日時
+          format: date-time
+tags:
+  - name: communities
+    description: コミュニティに関するAPI
